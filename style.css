@@ -467,3 +467,18 @@ footer {
   align-items: center;
   gap: 15px;
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+header.dark-mode, footer.dark-mode {
+  background-color: #1e1e1e;
+}
+
+a.dark-mode {
+  color: #bb86fc;
+}
+
