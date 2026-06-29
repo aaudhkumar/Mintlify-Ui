@@ -373,5 +373,31 @@
         </div>
     </footer>
 
+    <script>
+        const toggleButton = document.createElement('button');
+        toggleButton.innerText = 'Toggle Dark Mode';
+        toggleButton.style.position = 'fixed';
+        toggleButton.style.top = '10px';
+        toggleButton.style.right = '10px';
+        toggleButton.style.zIndex = '1000';
+        document.body.appendChild(toggleButton);
+
+        let isDarkMode = false;
+
+        toggleButton.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            if (isDarkMode) {
+                document.body.style.backgroundColor = '#121212';
+                document.body.style.color = '#ffffff';
+                document.querySelectorAll('header, footer').forEach(el => el.style.backgroundColor = '#1e1e1e');
+                document.querySelectorAll('a').forEach(el => el.style.color = '#bb86fc');
+            } else {
+                document.body.style.backgroundColor = '#ffffff';
+                document.body.style.color = '#000000';
+                document.querySelectorAll('header, footer').forEach(el => el.style.backgroundColor = '#f1f1f1');
+                document.querySelectorAll('a').forEach(el => el.style.color = '#0000ee');
+            }
+        });
+    </script>
 </body>
 </html>
