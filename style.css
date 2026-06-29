@@ -13,6 +13,11 @@ body {
   padding: 0 15px;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -23,6 +28,10 @@ header {
   padding: 15px 10px;
   z-index: 1000;
   font-weight: 500;
+}
+
+header.dark-mode {
+  background-color: #1e1e1e;
 }
 
 a {
@@ -77,11 +86,20 @@ label {
   color: #000000;
 }
 
+.btn-primary.dark-mode {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
 .btn-secondary {
   border-radius: 30px;
   padding: 8px 15px;
   background-color: #0f1829a4;
   color: #ffffff;
+}
+
+.btn-secondary.dark-mode {
+  background-color: #4a4a4a;
 }
 
 #background {
