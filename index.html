@@ -373,5 +373,29 @@
         </div>
     </footer>
 
+    <script>
+        const toggleButton = document.createElement('button');
+        toggleButton.innerText = 'Toggle Dark Mode';
+        toggleButton.style.position = 'fixed';
+        toggleButton.style.top = '10px';
+        toggleButton.style.right = '10px';
+        toggleButton.style.zIndex = '1000';
+        document.body.appendChild(toggleButton);
+
+        let darkMode = false;
+
+        toggleButton.addEventListener('click', () => {
+            darkMode = !darkMode;
+            if (darkMode) {
+                document.body.style.backgroundColor = '#121212';
+                document.body.style.color = '#ffffff';
+                toggleButton.innerText = 'Toggle Light Mode';
+            } else {
+                document.body.style.backgroundColor = '#ffffff';
+                document.body.style.color = '#000000';
+                toggleButton.innerText = 'Toggle Dark Mode';
+            }
+        });
+    </script>
 </body>
 </html>
