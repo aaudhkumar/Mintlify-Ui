@@ -295,6 +295,12 @@
         </section>
     </main>
 
+    <!-- ================= GitHub Plugin Section ================= -->
+    <section class="github-plugin">
+        <h1>GitHub Plugin</h1>
+        <button id="github-plugin-button">Connect to GitHub</button>
+    </section>
+
     <!-- ================= Footer Section  ================= -->
     <footer>
         <div class="footer-top">
@@ -372,6 +378,29 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('github-plugin-button').addEventListener('click', function() {
+            if (!navigator.onLine) {
+                alert('Error: No internet connection.');
+                return;
+            }
+            // Simulate GitHub authentication dialog
+            const username = prompt('Enter your GitHub username:');
+            const password = prompt('Enter your GitHub password:');
+            if (username === '' || password === '') {
+                alert('Error: Incorrect GitHub credentials.');
+                return;
+            }
+            // Simulate push action
+            const changes = false; // Simulate no changes
+            if (!changes) {
+                alert('Warning: No changes to push.');
+                return;
+            }
+            alert('Successfully connected to GitHub!');
+        });
+    </script>
 
 </body>
 </html>
