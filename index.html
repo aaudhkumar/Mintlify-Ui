@@ -373,5 +373,38 @@
         </div>
     </footer>
 
+    <script>
+        // Theme change logic
+        const originalTheme = localStorage.getItem('theme') || 'dark';
+        const body = document.body;
+        const themeButton = document.createElement('button');
+        const restoreButton = document.createElement('button');
+
+        themeButton.innerText = 'Blue Theme';
+        restoreButton.innerText = 'Restore Original Theme';
+        themeButton.className = 'btn-primary';
+        restoreButton.className = 'btn-secondary';
+
+        document.body.appendChild(themeButton);
+        document.body.appendChild(restoreButton);
+
+        themeButton.addEventListener('click', () => {
+            body.style.backgroundColor = 'blue';
+            body.style.color = '#ffffff';
+            localStorage.setItem('theme', 'blue');
+        });
+
+        restoreButton.addEventListener('click', () => {
+            body.style.backgroundColor = originalTheme === 'dark' ? '#08090b' : '#ffffff';
+            body.style.color = originalTheme === 'dark' ? '#ffffff' : '#000000';
+            localStorage.setItem('theme', originalTheme);
+        });
+
+        // Apply the original theme on load
+        if (originalTheme === 'blue') {
+            body.style.backgroundColor = 'blue';
+            body.style.color = '#ffffff';
+        }
+    </script>
 </body>
 </html>
