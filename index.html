@@ -293,6 +293,11 @@
                 </div>
             </div>
         </section>
+
+        <!-- ================= Blue Theme Button Section ================= -->
+        <section class="theme-toggle">
+            <button id="blue-theme-button" class="btn-primary">Blue Theme</button>
+        </section>
     </main>
 
     <!-- ================= Footer Section  ================= -->
@@ -372,6 +377,22 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const originalTheme = getComputedStyle(document.body).backgroundColor;
+        const blueTheme = '#0000FF';
+        const button = document.getElementById('blue-theme-button');
+
+        button.addEventListener('click', () => {
+            if (document.body.style.backgroundColor === blueTheme) {
+                document.body.style.backgroundColor = originalTheme;
+                button.textContent = 'Blue Theme';
+            } else {
+                document.body.style.backgroundColor = blueTheme;
+                button.textContent = 'Restore Original Theme';
+            }
+        });
+    </script>
 
 </body>
 </html>
