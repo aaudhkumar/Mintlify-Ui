@@ -298,6 +298,7 @@
     <!-- ================= Blue Button Section ================= -->
     <div class="theme-toggle">
         <button id="blue-button" class="btn-primary" aria-label="Toggle blue theme">Blue Theme</button>
+        <button id="default-button" class="btn-secondary" aria-label="Toggle default theme">Default Theme</button>
     </div>
 
     <!-- ================= Footer Section  ================= -->
@@ -380,15 +381,23 @@
 
     <script>
         const blueButton = document.getElementById('blue-button');
+        const defaultButton = document.getElementById('default-button');
         let isBlueTheme = false;
 
         function toggleTheme() {
-            isBlueTheme = !isBlueTheme;
-            document.body.style.backgroundColor = isBlueTheme ? 'blue' : '';
-            document.body.style.color = isBlueTheme ? 'white' : '';
+            isBlueTheme = true;
+            document.body.style.backgroundColor = 'blue';
+            document.body.style.color = 'white';
+        }
+
+        function toggleDefaultTheme() {
+            isBlueTheme = false;
+            document.body.style.backgroundColor = '';
+            document.body.style.color = '';
         }
 
         blueButton.addEventListener('click', toggleTheme);
+        defaultButton.addEventListener('click', toggleDefaultTheme);
     </script>
 
 </body>
