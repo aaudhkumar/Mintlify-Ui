@@ -53,4 +53,9 @@ describe('Theme Toggle', () => {
         button.focus();
         expect(document.activeElement).toBe(button);
     });
+
+    test('should be accessible for screen readers', () => {
+        const button = document.getElementById('blue-theme-toggle');
+        expect(button.getAttribute('aria-label')).toBe('Toggle blue theme');
+    });
 });
