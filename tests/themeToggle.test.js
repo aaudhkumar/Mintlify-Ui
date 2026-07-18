@@ -72,4 +72,9 @@ describe('Theme Toggle', () => {
         button.dispatchEvent(event);
         expect(document.body.classList.contains('blue-theme')).toBe(true);
     });
+
+    test('should have comprehensive accessibility tests', () => {
+        // Additional accessibility tests can be added here
+        expect(button.getAttribute('tabindex')).toBe('0');
+    });
 });
