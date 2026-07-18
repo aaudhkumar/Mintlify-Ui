@@ -37,6 +37,10 @@ header {
   outline: 2px solid #ffffff;
 }
 
+#blue-theme-button.active {
+  background-color: #0c8c5e;
+}
+
 a {
   color: #ffffff;
   text-decoration: none;
