@@ -27,6 +27,7 @@
         <div class="cta">
             <a href="#" class="btn-secondary">Contact sales</a>
             <a href="#" class="btn-primary">Start for free</a>
+            <button id="blue-button" class="btn-primary">Blue Theme</button>
         </div>
     </header>
     
@@ -372,6 +373,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const blueButton = document.getElementById('blue-button');
+        let originalTheme = document.body.className;
+
+        blueButton.addEventListener('click', () => {
+            if (document.body.classList.contains('blue-theme')) {
+                document.body.className = originalTheme;
+            } else {
+                document.body.className = 'blue-theme';
+            }
+        });
+    </script>
 
 </body>
 </html>
