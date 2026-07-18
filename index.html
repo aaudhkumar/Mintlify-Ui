@@ -378,19 +378,20 @@
         let isLoading = false;
         const toggleButton = document.getElementById('blue-theme-toggle');
 
+        // Load theme from local storage on page load
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'blue') {
+                document.body.classList.add('blue-theme');
+            }
+        });
+
         toggleButton.addEventListener('click', () => {
             if (isLoading) return;
             isLoading = true;
             document.body.classList.toggle('blue-theme');
             localStorage.setItem('theme', document.body.classList.contains('blue-theme') ? 'blue' : 'default');
             isLoading = false;
-        });
-
-        window.addEventListener('load', () => {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'blue') {
-                document.body.classList.add('blue-theme');
-            }
         });
 
         // Handle edge cases
