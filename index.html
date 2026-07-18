@@ -27,6 +27,7 @@
         <div class="cta">
             <a href="#" class="btn-secondary">Contact sales</a>
             <a href="#" class="btn-primary" id="blue-button">Start for free</a>
+            <a href="#" class="btn-secondary" id="default-button">Default Theme</a>
         </div>
     </header>
     
@@ -376,6 +377,7 @@
     <script>
         let isBlueTheme = false;
         const blueButton = document.getElementById('blue-button');
+        const defaultButton = document.getElementById('default-button');
 
         function toggleTheme() {
             isBlueTheme = !isBlueTheme;
@@ -384,7 +386,15 @@
             blueButton.className = isBlueTheme ? 'btn-primary' : 'btn-primary';
         }
 
+        function resetTheme() {
+            isBlueTheme = false;
+            document.body.style.backgroundColor = '';
+            document.body.style.color = '';
+            blueButton.className = 'btn-primary';
+        }
+
         blueButton.addEventListener('click', toggleTheme);
+        defaultButton.addEventListener('click', resetTheme);
     </script>
 
 </body>
