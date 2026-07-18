@@ -378,10 +378,20 @@
         const button = document.getElementById('blue-theme-button');
         let isBlueTheme = false;
 
+        // Load theme preference from local storage
+        const savedTheme = localStorage.getItem('blueTheme');
+        if (savedTheme === 'true') {
+            isBlueTheme = true;
+            document.body.style.backgroundColor = '#0000FF';
+            document.body.style.color = '#FFFFFF';
+        }
+
         button.addEventListener('click', () => {
             isBlueTheme = !isBlueTheme;
             document.body.style.backgroundColor = isBlueTheme ? '#0000FF' : '#08090b';
             document.body.style.color = isBlueTheme ? '#FFFFFF' : '#FFFFFF';
+            // Save theme preference to local storage
+            localStorage.setItem('blueTheme', isBlueTheme);
         });
     </script>
 </body>
