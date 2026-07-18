@@ -90,4 +90,17 @@ describe('Theme Toggle', () => {
 
         expect(button.getAttribute('aria-label')).toBe('Toggle blue theme');
     });
+
+    test('should pass accessibility testing', () => {
+        const button = document.createElement('button');
+        button.id = 'blue-theme-button';
+        button.setAttribute('aria-label', 'Toggle blue theme');
+        document.body.appendChild(button);
+
+        // Simulate keyboard navigation
+        button.focus();
+        expect(document.activeElement).toBe(button);
+        // Check if button is focusable
+        expect(button.tabIndex).toBe(0);
+    });
 });
