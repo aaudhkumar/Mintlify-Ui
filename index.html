@@ -376,11 +376,18 @@
 
     <script>
         const button = document.getElementById('blue-theme-button');
-        let isBlueTheme = false;
+        let isBlueTheme = localStorage.getItem('isBlueTheme') === 'true';
+
+        // Apply the theme on page load
+        if (isBlueTheme) {
+            document.body.style.backgroundColor = 'blue';
+            document.body.style.color = 'white';
+        }
 
         button.addEventListener('click', () => {
             if (document.body.classList.contains('loading')) return;
             isBlueTheme = !isBlueTheme;
+            localStorage.setItem('isBlueTheme', isBlueTheme);
             if (isBlueTheme) {
                 document.body.style.backgroundColor = 'blue';
                 document.body.style.color = 'white';
