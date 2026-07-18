@@ -27,6 +27,7 @@
         <div class="cta">
             <a href="#" class="btn-secondary">Contact sales</a>
             <a href="#" class="btn-primary">Start for free</a>
+            <button id="blue-theme-toggle" class="btn-primary" aria-label="Toggle Blue Theme">Toggle Blue Theme</button>
         </div>
     </header>
     
@@ -372,6 +373,30 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const toggleButton = document.getElementById('blue-theme-toggle');
+        let isBlueTheme = localStorage.getItem('blueTheme') === 'true';
+
+        // Apply the theme on page load
+        document.body.classList.toggle('blue-theme', isBlueTheme);
+        document.querySelector('header').classList.toggle('blue-theme', isBlueTheme);
+        document.querySelector('.hero').classList.toggle('blue-theme', isBlueTheme);
+        document.querySelector('.footer-top').classList.toggle('blue-theme', isBlueTheme);
+        document.querySelector('.footer-bottom').classList.toggle('blue-theme', isBlueTheme);
+
+        toggleButton.addEventListener('click', () => {
+            if (!isLoading) {
+                isBlueTheme = !isBlueTheme;
+                localStorage.setItem('blueTheme', isBlueTheme);
+                document.body.classList.toggle('blue-theme', isBlueTheme);
+                document.querySelector('header').classList.toggle('blue-theme', isBlueTheme);
+                document.querySelector('.hero').classList.toggle('blue-theme', isBlueTheme);
+                document.querySelector('.footer-top').classList.toggle('blue-theme', isBlueTheme);
+                document.querySelector('.footer-bottom').classList.toggle('blue-theme', isBlueTheme);
+            }
+        });
+    </script>
 
 </body>
 </html>
