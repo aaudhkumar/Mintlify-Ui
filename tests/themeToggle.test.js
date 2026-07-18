@@ -11,13 +11,11 @@ describe('Blue Theme Toggle', () => {
     test('should toggle blue theme on button click', () => {
         // Simulate button click
         button.click();
-        expect(document.body.style.backgroundColor).toBe('blue');
-        expect(document.body.style.color).toBe('white');
+        expect(document.body.classList.contains('blue-theme')).toBe(true);
 
         // Simulate button click again
         button.click();
-        expect(document.body.style.backgroundColor).toBe('');
-        expect(document.body.style.color).toBe('');
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
     });
 
     test('should persist theme across sessions', () => {
@@ -29,7 +27,22 @@ describe('Blue Theme Toggle', () => {
         `;
         button = document.getElementById('blue-theme-button');
         // Check if the theme is applied
-        expect(document.body.style.backgroundColor).toBe('blue');
-        expect(document.body.style.color).toBe('white');
+        expect(document.body.classList.contains('blue-theme')).toBe(true);
+    });
+
+    test('should handle edge case when localStorage is not available', () => {
+        const originalLocalStorage = window.localStorage;
+        delete window.localStorage;
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+        window.localStorage = originalLocalStorage;
+    });
+
+    test('should handle edge case when JavaScript is disabled', () => {
+        const originalAddEventListener = button.addEventListener;
+        button.addEventListener = () => {};
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+        button.addEventListener = originalAddEventListener;
     });
 });

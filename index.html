@@ -380,21 +380,14 @@
 
         // Apply the theme on page load
         if (isBlueTheme) {
-            document.body.style.backgroundColor = 'blue';
-            document.body.style.color = 'white';
+            document.body.classList.add('blue-theme');
         }
 
         button.addEventListener('click', () => {
             if (document.body.classList.contains('loading')) return;
             isBlueTheme = !isBlueTheme;
             localStorage.setItem('isBlueTheme', isBlueTheme);
-            if (isBlueTheme) {
-                document.body.style.backgroundColor = 'blue';
-                document.body.style.color = 'white';
-            } else {
-                document.body.style.backgroundColor = '';
-                document.body.style.color = '';
-            }
+            document.body.classList.toggle('blue-theme', isBlueTheme);
         });
     </script>
 </body>
