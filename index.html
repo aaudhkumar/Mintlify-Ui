@@ -28,6 +28,7 @@
             <a href="#" class="btn-secondary">Contact sales</a>
             <a href="#" class="btn-primary">Start for free</a>
         </div>
+        <button id="theme-toggle" aria-label="Toggle blue theme">Toggle Blue Theme</button>
     </header>
     
     <main>
@@ -373,5 +374,47 @@
         </div>
     </footer>
 
+    <script>
+        const themeToggleButton = document.getElementById('theme-toggle');
+        let isBlueTheme = false;
+
+        function applyTheme() {
+            if (isBlueTheme) {
+                document.body.classList.add('blue-theme');
+                document.body.classList.remove('default-theme');
+            } else {
+                document.body.classList.remove('blue-theme');
+                document.body.classList.add('default-theme');
+            }
+        }
+
+        themeToggleButton.addEventListener('click', () => {
+            isBlueTheme = !isBlueTheme;
+            applyTheme();
+            localStorage.setItem('theme', isBlueTheme ? 'blue' : 'default');
+        });
+
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                isBlueTheme = savedTheme === 'blue';
+                applyTheme();
+            }
+        });
+
+        // Simulate loading indicator for slow connections
+        const loadingIndicator = document.createElement('div');
+        loadingIndicator.innerText = 'Loading theme...';
+        loadingIndicator.style.display = 'none';
+        document.body.appendChild(loadingIndicator);
+
+        themeToggleButton.addEventListener('click', () => {
+            loadingIndicator.style.display = 'block';
+            setTimeout(() => {
+                loadingIndicator.style.display = 'none';
+                applyTheme();
+            }, 2000); // Simulate loading time
+        });
+    </script>
 </body>
 </html>
