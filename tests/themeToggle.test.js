@@ -45,4 +45,10 @@ describe('Blue Theme Toggle', () => {
         expect(document.body.classList.contains('blue-theme')).toBe(false);
         button.addEventListener = originalAddEventListener;
     });
+
+    test('should not toggle when loading', () => {
+        document.body.classList.add('loading');
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+    });
 });
