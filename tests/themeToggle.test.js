@@ -3,7 +3,7 @@ describe('Theme Toggle', () => {
 
     beforeEach(() => {
         document.body.innerHTML = `
-            <button id='blue-theme-button' aria-label='Toggle blue theme' class='btn-secondary'>Blue Theme</button>
+            <button id='blue-theme-button' aria-label='Toggle blue theme' class='btn-secondary' tabindex='0'>Blue Theme</button>
         `;
         button = document.getElementById('blue-theme-button');
     });
@@ -55,5 +55,15 @@ describe('Theme Toggle', () => {
         button.click();
         expect(document.body.classList.contains('blue-theme')).toBe(false);
         button.addEventListener = originalAddEventListener; // Restore event listener
+    });
+
+    test('should be accessible via keyboard navigation', () => {
+        const event = new KeyboardEvent('keydown', { key: 'Enter' });
+        button.dispatchEvent(event);
+        expect(document.body.classList.contains('blue-theme')).toBe(true);
+    });
+
+    test('should have ARIA attributes', () => {
+        expect(button.getAttribute('aria-label')).toBe('Toggle blue theme');
     });
 });
