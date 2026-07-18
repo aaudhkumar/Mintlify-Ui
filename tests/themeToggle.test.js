@@ -51,4 +51,15 @@ describe('Blue Theme Toggle', () => {
         button.click();
         expect(document.body.classList.contains('blue-theme')).toBe(false);
     });
+
+    // Accessibility tests
+    test('should be accessible via keyboard navigation', () => {
+        const event = new KeyboardEvent('keydown', { key: 'Enter' });
+        button.dispatchEvent(event);
+        expect(document.body.classList.contains('blue-theme')).toBe(true);
+    });
+
+    test('should have ARIA attributes', () => {
+        expect(button.getAttribute('aria-label')).toBe('Toggle blue theme');
+    });
 });
