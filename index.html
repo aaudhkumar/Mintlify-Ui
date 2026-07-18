@@ -28,6 +28,7 @@
             <a href="#" class="btn-secondary">Contact sales</a>
             <a href="#" class="btn-primary">Start for free</a>
         </div>
+        <button id="blue-theme-button" aria-label="Toggle blue theme" class="btn-secondary">Blue Theme</button>
     </header>
     
     <main>
@@ -373,5 +374,21 @@
         </div>
     </footer>
 
+    <script>
+        const button = document.getElementById('blue-theme-button');
+        let isBlueTheme = false;
+
+        button.addEventListener('click', () => {
+            if (document.body.classList.contains('loading')) return;
+            isBlueTheme = !isBlueTheme;
+            if (isBlueTheme) {
+                document.body.style.backgroundColor = 'blue';
+                document.body.style.color = 'white';
+            } else {
+                document.body.style.backgroundColor = '';
+                document.body.style.color = '';
+            }
+        });
+    </script>
 </body>
 </html>
