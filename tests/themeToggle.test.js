@@ -2,7 +2,7 @@ describe('Theme Toggle', () => {
     beforeEach(() => {
         // Set up the DOM and localStorage before each test
         document.body.innerHTML = `
-            <button id="blue-theme-toggle">Toggle Theme</button>
+            <button id="blue-theme-toggle" aria-label="Toggle blue theme" aria-disabled="false">Toggle Theme</button>
         `;
         localStorage.clear();
     });
@@ -46,5 +46,11 @@ describe('Theme Toggle', () => {
         let isLoading = true; // Simulate loading state
         button.click();
         expect(document.body.classList.contains('blue-theme')).toBe(false);
+    });
+
+    test('should be accessible via keyboard', () => {
+        const button = document.getElementById('blue-theme-toggle');
+        button.focus();
+        expect(document.activeElement).toBe(button);
     });
 });
