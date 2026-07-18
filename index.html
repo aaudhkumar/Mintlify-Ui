@@ -54,8 +54,8 @@
             <div><img src="assets/anthropiclogo.svg" alt=""></div>
             <div><img src="assets/coinbase.svg" alt=""></div>
             <div><img src="assets/Microsoft.png" alt=""></div>
-            <div><img src="assets/Primary w. Off-White@2x.png""></div>
-            <div><img src=" assets/hubspotlogo.svg" alt=""></div>
+            <div><img src="assets/Primary w. Off-White@2x.png" alt=""></div>
+            <div><img src="assets/hubspotlogo.svg" alt=""></div>
             <div><img src="assets/xlogo.svg" alt=""></div>
             <div><img src="assets/paypal.svg" alt=""></div>
             <div><img src="assets/Lovable.svg" alt=""></div>
@@ -295,6 +295,12 @@
         </section>
     </main>
 
+    <!-- ================= Theme Toggle Button ================= -->
+    <div class="theme-toggle">
+        <button id="blue-button" class="btn-primary" aria-label="Toggle to blue theme">Blue Theme</button>
+        <button id="default-button" class="btn-primary" aria-label="Toggle to default theme">Default Theme</button>
+    </div>
+
     <!-- ================= Footer Section  ================= -->
     <footer>
         <div class="footer-top">
@@ -372,6 +378,43 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const blueButton = document.getElementById('blue-button');
+        const defaultButton = document.getElementById('default-button');
+        const body = document.body;
+
+        const toggleTheme = (theme) => {
+            if (theme === 'blue') {
+                body.style.backgroundColor = 'blue';
+                body.style.color = 'white';
+                // Add logic to change other UI components to blue theme
+                document.querySelectorAll('.btn-primary').forEach(btn => {
+                    btn.style.backgroundColor = 'blue';
+                    btn.style.color = 'white';
+                });
+                document.querySelectorAll('.btn-secondary').forEach(btn => {
+                    btn.style.backgroundColor = 'lightblue';
+                    btn.style.color = 'black';
+                });
+            } else {
+                body.style.backgroundColor = '';
+                body.style.color = '';
+                // Add logic to revert other UI components to default theme
+                document.querySelectorAll('.btn-primary').forEach(btn => {
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                });
+                document.querySelectorAll('.btn-secondary').forEach(btn => {
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                });
+            }
+        };
+
+        blueButton.addEventListener('click', () => toggleTheme('blue'));
+        defaultButton.addEventListener('click', () => toggleTheme('default'));
+    </script>
 
 </body>
 </html>
