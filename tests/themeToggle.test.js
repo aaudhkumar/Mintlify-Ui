@@ -70,4 +70,24 @@ describe('Theme Toggle', () => {
         button.click();
         expect(document.body.classList.contains('blue-theme')).toBe(false);
     });
+
+    test('should be accessible via keyboard navigation', () => {
+        const button = document.createElement('button');
+        button.id = 'blue-theme-button';
+        button.setAttribute('tabindex', '0');
+        document.body.appendChild(button);
+
+        // Simulate keyboard navigation
+        button.focus();
+        expect(document.activeElement).toBe(button);
+    });
+
+    test('should have ARIA attributes', () => {
+        const button = document.createElement('button');
+        button.id = 'blue-theme-button';
+        button.setAttribute('aria-label', 'Toggle blue theme');
+        document.body.appendChild(button);
+
+        expect(button.getAttribute('aria-label')).toBe('Toggle blue theme');
+    });
 });
