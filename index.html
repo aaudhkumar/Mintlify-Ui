@@ -392,6 +392,11 @@
                 document.body.classList.add('blue-theme');
             }
         });
+
+        // Handle edge cases
+        window.addEventListener('error', () => {
+            document.body.classList.remove('blue-theme');
+        });
     </script>
 </body>
 </html>
