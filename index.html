@@ -6,6 +6,20 @@
     <title>Mintlify</title>
      <link rel="icon" type="image/x-icon" href="assets/mintlify-icon.svg">
      <link rel="stylesheet" href="style.css">
+     <style>
+        body.blue-theme {
+            background-color: #007BFF;
+            color: white;
+        }
+        .blue-theme .btn-primary {
+            background-color: #0056b3;
+            color: white;
+        }
+        .blue-theme .btn-secondary {
+            background-color: #0056b3;
+            color: white;
+        }
+     </style>
 </head>
 <body>
     
@@ -28,6 +42,7 @@
             <a href="#" class="btn-secondary">Contact sales</a>
             <a href="#" class="btn-primary">Start for free</a>
         </div>
+        <button id="theme-toggle" aria-label="Toggle blue theme" aria-pressed="false">Toggle Blue Theme</button>
     </header>
     
     <main>
@@ -373,5 +388,26 @@
         </div>
     </footer>
 
+    <script>
+        const themeToggleButton = document.getElementById('theme-toggle');
+        let isBlueTheme = false;
+
+        themeToggleButton.addEventListener('click', () => {
+            isBlueTheme = !isBlueTheme;
+            document.body.classList.toggle('blue-theme', isBlueTheme);
+            themeToggleButton.setAttribute('aria-pressed', isBlueTheme);
+            localStorage.setItem('theme', isBlueTheme ? 'blue' : 'default');
+        });
+
+        // Load the theme from local storage on page load
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'blue') {
+                isBlueTheme = true;
+                document.body.classList.add('blue-theme');
+                themeToggleButton.setAttribute('aria-pressed', 'true');
+            }
+        });
+    </script>
 </body>
 </html>
