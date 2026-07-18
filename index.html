@@ -27,7 +27,7 @@
         <div class="cta">
             <a href="#" class="btn-secondary">Contact sales</a>
             <a href="#" class="btn-primary">Start for free</a>
-            <button id="blue-theme-toggle" class="btn-primary">Toggle Blue Theme</button>
+            <button id="blue-theme-toggle" class="btn-primary" aria-label="Toggle Blue Theme">Toggle Blue Theme</button>
         </div>
     </header>
     
@@ -386,13 +386,15 @@
         document.querySelector('.footer-bottom').classList.toggle('blue-theme', isBlueTheme);
 
         toggleButton.addEventListener('click', () => {
-            isBlueTheme = !isBlueTheme;
-            localStorage.setItem('blueTheme', isBlueTheme);
-            document.body.classList.toggle('blue-theme', isBlueTheme);
-            document.querySelector('header').classList.toggle('blue-theme', isBlueTheme);
-            document.querySelector('.hero').classList.toggle('blue-theme', isBlueTheme);
-            document.querySelector('.footer-top').classList.toggle('blue-theme', isBlueTheme);
-            document.querySelector('.footer-bottom').classList.toggle('blue-theme', isBlueTheme);
+            if (!isLoading) {
+                isBlueTheme = !isBlueTheme;
+                localStorage.setItem('blueTheme', isBlueTheme);
+                document.body.classList.toggle('blue-theme', isBlueTheme);
+                document.querySelector('header').classList.toggle('blue-theme', isBlueTheme);
+                document.querySelector('.hero').classList.toggle('blue-theme', isBlueTheme);
+                document.querySelector('.footer-top').classList.toggle('blue-theme', isBlueTheme);
+                document.querySelector('.footer-bottom').classList.toggle('blue-theme', isBlueTheme);
+            }
         });
     </script>
 

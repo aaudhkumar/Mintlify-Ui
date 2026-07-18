@@ -1,7 +1,7 @@
 describe('Theme Toggle', () => {
     beforeEach(() => {
         document.body.innerHTML = `
-            <button id="blue-theme-toggle">Toggle Blue Theme</button>
+            <button id="blue-theme-toggle" aria-label="Toggle Blue Theme">Toggle Blue Theme</button>
         `;
     });
 
@@ -69,5 +69,11 @@ describe('Theme Toggle', () => {
         const button = document.getElementById('blue-theme-toggle');
         button.click();
         expect(document.body.classList.contains('blue-theme')).toBe(false);
+    });
+
+    test('should be accessible via keyboard navigation', () => {
+        const button = document.getElementById('blue-theme-toggle');
+        button.focus();
+        expect(document.activeElement).toBe(button);
     });
 });
