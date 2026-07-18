@@ -383,9 +383,8 @@
         }
 
         themeToggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('blue-theme');
-            const theme = document.body.classList.contains('blue-theme') ? 'blue-theme' : '';
-            localStorage.setItem('theme', theme);
+            const isBlueTheme = document.body.classList.toggle('blue-theme');
+            localStorage.setItem('theme', isBlueTheme ? 'blue-theme' : '');
         });
     </script>
 </body>
