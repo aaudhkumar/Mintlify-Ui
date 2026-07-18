@@ -59,4 +59,15 @@ describe('Theme Toggle', () => {
         // Check that the theme is not toggled
         expect(document.body.classList.contains('blue-theme')).toBe(false);
     });
+
+    test('should not be clickable when loading', () => {
+        const button = document.createElement('button');
+        button.id = 'blue-theme-button';
+        button.disabled = true; // Simulate loading state
+        document.body.appendChild(button);
+
+        // Simulate button click to toggle theme
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+    });
 });
