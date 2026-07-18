@@ -394,8 +394,16 @@
             }
         }
 
+        function toggleDefaultTheme() {
+            if (isBlueTheme) {
+                document.body.style.backgroundColor = '';
+                document.body.style.color = '';
+                isBlueTheme = false;
+            }
+        }
+
         blueButton.addEventListener('click', toggleTheme);
-        toggleButton.addEventListener('click', toggleTheme);
+        toggleButton.addEventListener('click', toggleDefaultTheme);
     </script>
 </body>
 </html>
