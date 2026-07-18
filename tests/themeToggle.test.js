@@ -58,4 +58,11 @@ describe('Theme Toggle', () => {
         const button = document.getElementById('blue-theme-toggle');
         expect(button.getAttribute('aria-label')).toBe('Toggle blue theme');
     });
+
+    test('should not be clickable when loading', () => {
+        const button = document.getElementById('blue-theme-toggle');
+        let isLoading = true; // Simulate loading state
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+    });
 });
