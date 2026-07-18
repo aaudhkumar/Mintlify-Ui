@@ -385,11 +385,19 @@
                 document.body.style.backgroundColor = '';
                 document.body.style.color = '';
                 // Add logic to revert other UI components to default theme
+                document.querySelectorAll('.hero, .partners, .intelligence, .assistant, .enterprise, .customers, .documentation').forEach(section => {
+                    section.style.backgroundColor = '';
+                    section.style.color = '';
+                });
                 isBlueTheme = false;
             } else {
                 document.body.style.backgroundColor = 'blue';
                 document.body.style.color = 'white';
                 // Add logic to change other UI components to blue theme
+                document.querySelectorAll('.hero, .partners, .intelligence, .assistant, .enterprise, .customers, .documentation').forEach(section => {
+                    section.style.backgroundColor = 'blue';
+                    section.style.color = 'white';
+                });
                 isBlueTheme = true;
             }
         }
@@ -398,6 +406,10 @@
             if (isBlueTheme) {
                 document.body.style.backgroundColor = '';
                 document.body.style.color = '';
+                document.querySelectorAll('.hero, .partners, .intelligence, .assistant, .enterprise, .customers, .documentation').forEach(section => {
+                    section.style.backgroundColor = '';
+                    section.style.color = '';
+                });
                 isBlueTheme = false;
             }
         }
