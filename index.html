@@ -381,19 +381,20 @@
         const toggleButton = document.getElementById('toggle-button');
         let isBlueTheme = false;
 
-        blueButton.addEventListener('click', () => {
-            document.body.style.backgroundColor = isBlueTheme ? '' : 'blue';
-            document.body.style.color = isBlueTheme ? '' : 'white';
-            isBlueTheme = !isBlueTheme;
-        });
-
-        toggleButton.addEventListener('click', () => {
+        const toggleTheme = () => {
             if (isBlueTheme) {
                 document.body.style.backgroundColor = '';
                 document.body.style.color = '';
                 isBlueTheme = false;
+            } else {
+                document.body.style.backgroundColor = 'blue';
+                document.body.style.color = 'white';
+                isBlueTheme = true;
             }
-        });
+        };
+
+        blueButton.addEventListener('click', toggleTheme);
+        toggleButton.addEventListener('click', toggleTheme);
     </script>
 
 </body>
