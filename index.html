@@ -297,8 +297,8 @@
 
     <!-- ================= Theme Toggle Button ================= -->
     <div class="theme-toggle">
-        <button id="blue-button" aria-label="Toggle to blue theme">Blue Theme</button>
-        <button id="default-button" aria-label="Toggle to default theme">Default Theme</button>
+        <button id="blue-button" class="btn-blue" aria-label="Toggle to blue theme">Blue Theme</button>
+        <button id="default-button" class="btn-blue" aria-label="Toggle to default theme">Default Theme</button>
     </div>
 
     <!-- ================= Footer Section  ================= -->
@@ -384,17 +384,20 @@
         const defaultButton = document.getElementById('default-button');
         const body = document.body;
 
-        blueButton.addEventListener('click', () => {
-            body.style.backgroundColor = 'blue';
-            body.style.color = 'white';
-            // Add logic to change other UI components to blue theme
-        });
+        const toggleTheme = (theme) => {
+            if (theme === 'blue') {
+                body.style.backgroundColor = 'blue';
+                body.style.color = 'white';
+                // Add logic to change other UI components to blue theme
+            } else {
+                body.style.backgroundColor = '';
+                body.style.color = '';
+                // Add logic to revert other UI components to default theme
+            }
+        };
 
-        defaultButton.addEventListener('click', () => {
-            body.style.backgroundColor = '';
-            body.style.color = '';
-            // Add logic to revert other UI components to default theme
-        });
+        blueButton.addEventListener('click', () => toggleTheme('blue'));
+        defaultButton.addEventListener('click', () => toggleTheme('default'));
     </script>
 
 </body>
