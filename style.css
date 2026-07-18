@@ -467,3 +467,33 @@ footer {
   align-items: center;
   gap: 15px;
 }
+
+/* Blue Theme Styles */
+.blue-theme {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.blue-theme header,
+.blue-theme footer {
+  background-color: #0056b3;
+}
+
+.blue-theme a {
+  color: #ffffff;
+}
+
+.blue-theme h1,
+.blue-theme p {
+  color: #ffffff;
+}
+
+.blue-theme .btn-primary {
+  background-color: #ffffff;
+  color: #007bff;
+}
+
+.blue-theme .btn-secondary {
+  background-color: #0056b3;
+  color: #ffffff;
+}

@@ -26,7 +26,8 @@
         </nav>
         <div class="cta">
             <a href="#" class="btn-secondary">Contact sales</a>
-            <a href="#" class="btn-primary">Start for free</a>
+            <a href="#" class="btn-primary" id="blue-button">Blue Theme</a>
+            <a href="#" class="btn-secondary" id="default-button">Default Theme</a>
         </div>
     </header>
     
@@ -372,6 +373,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let isBlueTheme = false;
+        const blueButton = document.getElementById('blue-button');
+        const defaultButton = document.getElementById('default-button');
+
+        function toggleTheme() {
+            isBlueTheme = !isBlueTheme;
+            document.body.style.backgroundColor = isBlueTheme ? 'blue' : '';
+            document.body.style.color = isBlueTheme ? 'white' : '';
+            blueButton.className = isBlueTheme ? 'btn-primary' : 'btn-primary';
+            // Update all UI components to reflect the blue theme
+            const allElements = document.querySelectorAll('h1, h2, h3, p, a, .btn-primary, .btn-secondary');
+            allElements.forEach(element => {
+                element.style.color = isBlueTheme ? 'white' : '';
+            });
+        }
+
+        function resetTheme() {
+            isBlueTheme = false;
+            document.body.style.backgroundColor = '';
+            document.body.style.color = '';
+            blueButton.className = 'btn-primary';
+            // Reset all UI components to default theme
+            const allElements = document.querySelectorAll('h1, h2, h3, p, a, .btn-primary, .btn-secondary');
+            allElements.forEach(element => {
+                element.style.color = '';
+            });
+        }
+
+        blueButton.addEventListener('click', toggleTheme);
+        defaultButton.addEventListener('click', resetTheme);
+    </script>
 
 </body>
 </html>
