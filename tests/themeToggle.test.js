@@ -38,4 +38,16 @@ describe('Theme Toggle', () => {
         button.click(); // Simulate click
         expect(document.body.classList.contains('blue-theme')).toBe(false); // No change expected
     });
+
+    // Accessibility tests
+    test('should be accessible via keyboard', () => {
+        const button = document.getElementById('theme-toggle');
+        button.focus();
+        expect(document.activeElement).toBe(button);
+    });
+
+    test('should have aria-label for screen readers', () => {
+        const button = document.getElementById('theme-toggle');
+        expect(button.getAttribute('aria-label')).toBe('Toggle blue theme');
+    });
 });
