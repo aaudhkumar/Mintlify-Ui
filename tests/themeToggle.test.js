@@ -62,4 +62,11 @@ describe('Blue Theme Toggle', () => {
     test('should have ARIA attributes', () => {
         expect(button.getAttribute('aria-label')).toBe('Toggle blue theme');
     });
+
+    // New accessibility test for keyboard navigation
+    test('should be operable via keyboard navigation', () => {
+        const event = new KeyboardEvent('keydown', { key: 'Enter' });
+        button.dispatchEvent(event);
+        expect(document.body.classList.contains('blue-theme')).toBe(true);
+    });
 });
