@@ -28,6 +28,7 @@
             <a href="#" class="btn-secondary">Contact sales</a>
             <a href="#" class="btn-primary">Start for free</a>
         </div>
+        <button id="blue-theme-button" aria-label="Toggle blue theme" class="btn-secondary">Blue Theme</button>
     </header>
     
     <main>
@@ -55,7 +56,7 @@
             <div><img src="assets/coinbase.svg" alt=""></div>
             <div><img src="assets/Microsoft.png" alt=""></div>
             <div><img src="assets/Primary w. Off-White@2x.png""></div>
-            <div><img src=" assets/hubspotlogo.svg" alt=""></div>
+            <div><img src="assets/hubspotlogo.svg" alt=""></div>
             <div><img src="assets/xlogo.svg" alt=""></div>
             <div><img src="assets/paypal.svg" alt=""></div>
             <div><img src="assets/Lovable.svg" alt=""></div>
@@ -373,5 +374,15 @@
         </div>
     </footer>
 
+    <script>
+        const button = document.getElementById('blue-theme-button');
+        let isBlueTheme = false;
+
+        button.addEventListener('click', () => {
+            isBlueTheme = !isBlueTheme;
+            document.body.style.backgroundColor = isBlueTheme ? '#0000FF' : '#08090b';
+            document.body.style.color = isBlueTheme ? '#FFFFFF' : '#FFFFFF';
+        });
+    </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-* {
+.* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,6 +23,18 @@ header {
   padding: 15px 10px;
   z-index: 1000;
   font-weight: 500;
+}
+
+#blue-theme-button {
+  border-radius: 30px;
+  padding: 8px 15px;
+  background-color: #0f1829a4;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#blue-theme-button:focus {
+  outline: 2px solid #ffffff;
 }
 
 a {
