@@ -382,26 +382,42 @@
         let isBlueTheme = false;
         let isDefaultTheme = true;
 
+        const applyBlueTheme = () => {
+            document.body.style.backgroundColor = 'blue';
+            document.body.style.color = 'white';
+            // Apply blue theme to all UI components
+            const elements = document.querySelectorAll('.hero, .partners, .intelligence, .assistant, .enterprise, .customers, .documentation');
+            elements.forEach(element => {
+                element.style.backgroundColor = 'blue';
+                element.style.color = 'white';
+            });
+        };
+
+        const removeBlueTheme = () => {
+            document.body.style.backgroundColor = '';
+            document.body.style.color = '';
+            // Remove blue theme from all UI components
+            const elements = document.querySelectorAll('.hero, .partners, .intelligence, .assistant, .enterprise, .customers, .documentation');
+            elements.forEach(element => {
+                element.style.backgroundColor = '';
+                element.style.color = '';
+            });
+        };
+
         const toggleTheme = () => {
             if (isBlueTheme) {
-                document.body.style.backgroundColor = '';
-                document.body.style.color = '';
+                removeBlueTheme();
                 isBlueTheme = false;
-                isDefaultTheme = true;
             } else {
-                document.body.style.backgroundColor = 'blue';
-                document.body.style.color = 'white';
+                applyBlueTheme();
                 isBlueTheme = true;
-                isDefaultTheme = false;
             }
         };
 
         const toggleDefaultTheme = () => {
-            if (!isDefaultTheme) {
-                document.body.style.backgroundColor = '';
-                document.body.style.color = '';
+            if (isBlueTheme) {
+                removeBlueTheme();
                 isBlueTheme = false;
-                isDefaultTheme = true;
             }
         };
 
