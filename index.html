@@ -382,13 +382,11 @@
             if (document.body.classList.contains('loading')) return;
             isBlueTheme = !isBlueTheme;
             if (isBlueTheme) {
-                document.body.style.backgroundColor = 'blue';
-                document.body.style.color = 'white';
+                document.body.classList.add('blue-theme');
                 // Track user interaction
                 console.log('Blue theme activated');
             } else {
-                document.body.style.backgroundColor = '#08090b';
-                document.body.style.color = '#ffffff';
+                document.body.classList.remove('blue-theme');
                 // Track user interaction
                 console.log('Default theme activated');
             }
