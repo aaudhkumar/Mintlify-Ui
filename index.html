@@ -382,14 +382,12 @@
         const savedTheme = localStorage.getItem('blueTheme');
         if (savedTheme === 'true') {
             isBlueTheme = true;
-            document.body.style.backgroundColor = '#0000FF';
-            document.body.style.color = '#FFFFFF';
+            document.body.classList.toggle('blue-theme', isBlueTheme);
         }
 
         button.addEventListener('click', () => {
             isBlueTheme = !isBlueTheme;
-            document.body.style.backgroundColor = isBlueTheme ? '#0000FF' : '#08090b';
-            document.body.style.color = isBlueTheme ? '#FFFFFF' : '#FFFFFF';
+            document.body.classList.toggle('blue-theme', isBlueTheme);
             // Save theme preference to local storage
             localStorage.setItem('blueTheme', isBlueTheme);
         });

@@ -41,6 +41,11 @@ header {
   background-color: #0c8c5e;
 }
 
+.blue-theme {
+  background-color: #0000FF;
+  color: #FFFFFF;
+}
+
 a {
   color: #ffffff;
   text-decoration: none;
