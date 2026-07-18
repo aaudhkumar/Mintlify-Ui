@@ -382,25 +382,28 @@
         const blueButton = document.getElementById('blue-button');
         const toggleButton = document.getElementById('toggle-button');
 
-        blueButton.addEventListener('click', () => {
-            isBlueTheme = true;
-            document.body.style.backgroundColor = 'blue';
-            document.body.style.color = 'white';
-            // Update all UI components to reflect the blue theme
-            document.querySelectorAll('*').forEach(el => {
-                el.style.color = 'white';
-            });
-        });
+        const toggleTheme = () => {
+            if (isBlueTheme) {
+                isBlueTheme = false;
+                document.body.style.backgroundColor = ''; // Reset to default
+                document.body.style.color = ''; // Reset to default
+                // Reset all UI components to reflect the default theme
+                document.querySelectorAll('*').forEach(el => {
+                    el.style.color = '';
+                });
+            } else {
+                isBlueTheme = true;
+                document.body.style.backgroundColor = 'blue';
+                document.body.style.color = 'white';
+                // Update all UI components to reflect the blue theme
+                document.querySelectorAll('*').forEach(el => {
+                    el.style.color = 'white';
+                });
+            }
+        };
 
-        toggleButton.addEventListener('click', () => {
-            isBlueTheme = false;
-            document.body.style.backgroundColor = ''; // Reset to default
-            document.body.style.color = ''; // Reset to default
-            // Reset all UI components to reflect the default theme
-            document.querySelectorAll('*').forEach(el => {
-                el.style.color = '';
-            });
-        });
+        blueButton.addEventListener('click', toggleTheme);
+        toggleButton.addEventListener('click', toggleTheme);
     </script>
 </body>
 </html>
