@@ -28,6 +28,7 @@
             <a href="#" class="btn-secondary">Contact sales</a>
             <a href="#" class="btn-primary">Start for free</a>
         </div>
+        <button id="theme-toggle" aria-label="Toggle blue theme" class="btn-secondary">Toggle Blue Theme</button>
     </header>
     
     <main>
@@ -373,5 +374,18 @@
         </div>
     </footer>
 
+    <script>
+        const themeToggleButton = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+        }
+
+        themeToggleButton.addEventListener('click', () => {
+            const isBlueTheme = document.body.classList.toggle('blue-theme');
+            localStorage.setItem('theme', isBlueTheme ? 'blue-theme' : '');
+        });
+    </script>
 </body>
 </html>
