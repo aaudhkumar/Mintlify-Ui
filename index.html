@@ -295,6 +295,11 @@
         </section>
     </main>
 
+    <!-- ================= Blue Button Section  ================= -->
+    <div class="blue-button-container">
+        <button id="blue-button" class="btn-primary">Blue Button</button>
+    </div>
+
     <!-- ================= Footer Section  ================= -->
     <footer>
         <div class="footer-top">
@@ -373,5 +378,14 @@
         </div>
     </footer>
 
+    <script>
+        const originalTheme = getComputedStyle(document.body).backgroundColor;
+        const blueButton = document.getElementById('blue-button');
+
+        blueButton.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'blue';
+            document.body.style.color = 'white';
+        });
+    </script>
 </body>
 </html>
