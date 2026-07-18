@@ -373,5 +373,57 @@
         </div>
     </footer>
 
+    <button id="blue-button" aria-label="Toggle blue theme">Blue Theme</button>
+    <button id="toggle-button" aria-label="Toggle default theme">Toggle Theme</button>
+
+    <script>
+        const blueButton = document.getElementById('blue-button');
+        const toggleButton = document.getElementById('toggle-button');
+        let isBlueTheme = false;
+        let isDefaultTheme = true;
+
+        const applyBlueTheme = () => {
+            document.body.style.backgroundColor = 'blue';
+            document.body.style.color = 'white';
+            // Apply blue theme to all UI components
+            const elements = document.querySelectorAll('.hero, .partners, .intelligence, .assistant, .enterprise, .customers, .documentation');
+            elements.forEach(element => {
+                element.style.backgroundColor = 'blue';
+                element.style.color = 'white';
+            });
+        };
+
+        const removeBlueTheme = () => {
+            document.body.style.backgroundColor = '';
+            document.body.style.color = '';
+            // Remove blue theme from all UI components
+            const elements = document.querySelectorAll('.hero, .partners, .intelligence, .assistant, .enterprise, .customers, .documentation');
+            elements.forEach(element => {
+                element.style.backgroundColor = '';
+                element.style.color = '';
+            });
+        };
+
+        const toggleTheme = () => {
+            if (isBlueTheme) {
+                removeBlueTheme();
+                isBlueTheme = false;
+            } else {
+                applyBlueTheme();
+                isBlueTheme = true;
+            }
+        };
+
+        const toggleDefaultTheme = () => {
+            if (isBlueTheme) {
+                removeBlueTheme();
+                isBlueTheme = false;
+            }
+        };
+
+        blueButton.addEventListener('click', toggleTheme);
+        toggleButton.addEventListener('click', toggleDefaultTheme);
+    </script>
+
 </body>
 </html>
