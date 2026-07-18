@@ -388,12 +388,24 @@
             isBlueTheme = true;
             document.body.style.backgroundColor = 'blue';
             document.body.style.color = 'white';
+            // Update all UI components to reflect the blue theme
+            const allElements = document.querySelectorAll('*');
+            allElements.forEach(element => {
+                element.style.color = 'white';
+                element.style.backgroundColor = 'blue';
+            });
         }
 
         function toggleDefaultTheme() {
             isBlueTheme = false;
             document.body.style.backgroundColor = '';
             document.body.style.color = '';
+            // Reset all UI components to default theme
+            const allElements = document.querySelectorAll('*');
+            allElements.forEach(element => {
+                element.style.color = '';
+                element.style.backgroundColor = '';
+            });
         }
 
         blueButton.addEventListener('click', toggleTheme);
