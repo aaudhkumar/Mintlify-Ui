@@ -40,4 +40,11 @@ describe('Theme Toggle', () => {
         button.click();
         expect(document.body.classList.contains('blue-theme')).toBe(true);
     });
+
+    test('should not toggle if loading state is true', () => {
+        const button = document.getElementById('blue-theme-toggle');
+        let isLoading = true; // Simulate loading state
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+    });
 });
