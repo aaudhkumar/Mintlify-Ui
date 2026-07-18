@@ -378,16 +378,23 @@
         const button = document.getElementById('blue-theme-button');
         let isBlueTheme = false;
 
+        // Load theme preference from local storage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'blue') {
+            isBlueTheme = true;
+            document.body.classList.add('blue-theme');
+        }
+
         button.addEventListener('click', () => {
             if (document.body.classList.contains('loading')) return;
             isBlueTheme = !isBlueTheme;
             if (isBlueTheme) {
                 document.body.classList.add('blue-theme');
-                // Track user interaction
+                localStorage.setItem('theme', 'blue'); // Save preference
                 console.log('Blue theme activated');
             } else {
                 document.body.classList.remove('blue-theme');
-                // Track user interaction
+                localStorage.removeItem('theme'); // Remove preference
                 console.log('Default theme activated');
             }
         });
