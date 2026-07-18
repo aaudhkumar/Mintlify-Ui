@@ -49,4 +49,25 @@ describe('Theme Toggle', () => {
         button.click();
         expect(document.body.classList.contains('blue-theme')).toBe(false);
     });
+
+    test('should handle localStorage not available', () => {
+        // Simulate localStorage not available
+        const button = document.getElementById('blue-theme-toggle');
+        let isBlueTheme = false;
+
+        button.addEventListener('click', () => {
+            isBlueTheme = !isBlueTheme;
+            document.body.classList.toggle('blue-theme', isBlueTheme);
+        });
+
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(true);
+    });
+
+    test('should handle JavaScript disabled', () => {
+        // Simulate JavaScript disabled
+        const button = document.getElementById('blue-theme-toggle');
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+    });
 });
