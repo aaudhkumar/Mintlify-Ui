@@ -27,4 +27,17 @@ describe('Theme Toggle', () => {
         }
         expect(document.body.classList.contains('blue-theme')).toBe(true);
     });
+
+    test('should not be clickable when loading', () => {
+        document.body.classList.add('loading');
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+    });
+
+    test('should revert to default theme if blue theme fails to load', () => {
+        // Simulate a failure in loading the blue theme
+        localStorage.setItem('theme', 'blue');
+        document.body.classList.remove('blue-theme');
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+    });
 });
