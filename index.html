@@ -380,19 +380,22 @@
         const blueButton = document.getElementById('blue-button');
         const toggleButton = document.getElementById('toggle-button');
 
-        blueButton.addEventListener('click', () => {
-            isBlueTheme = true;
-            document.body.style.backgroundColor = 'blue';
-            document.body.style.color = 'white';
-            // Add logic to change other UI components to blue theme
-        });
+        function toggleTheme() {
+            if (isBlueTheme) {
+                document.body.style.backgroundColor = '';
+                document.body.style.color = '';
+                // Add logic to revert other UI components to default theme
+                isBlueTheme = false;
+            } else {
+                document.body.style.backgroundColor = 'blue';
+                document.body.style.color = 'white';
+                // Add logic to change other UI components to blue theme
+                isBlueTheme = true;
+            }
+        }
 
-        toggleButton.addEventListener('click', () => {
-            isBlueTheme = false;
-            document.body.style.backgroundColor = '';
-            document.body.style.color = '';
-            // Add logic to revert other UI components to default theme
-        });
+        blueButton.addEventListener('click', toggleTheme);
+        toggleButton.addEventListener('click', toggleTheme);
     </script>
 </body>
 </html>
