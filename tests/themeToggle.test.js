@@ -1,7 +1,7 @@
 describe('Theme Toggle', () => {
     beforeEach(() => {
         document.body.innerHTML = `
-            <button id="blue-theme-toggle" aria-label="Toggle Blue Theme">Toggle Blue Theme</button>
+            <button id=\"blue-theme-toggle\" aria-label=\"Toggle Blue Theme\">Toggle Blue Theme</button>
         `;
     });
 
