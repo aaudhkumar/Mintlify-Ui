@@ -40,4 +40,20 @@ describe('Theme Toggle', () => {
         document.body.classList.remove('blue-theme');
         expect(document.body.classList.contains('blue-theme')).toBe(false);
     });
+
+    test('should handle localStorage not available', () => {
+        const originalLocalStorage = window.localStorage;
+        delete window.localStorage;
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+        window.localStorage = originalLocalStorage; // Restore localStorage
+    });
+
+    test('should handle JavaScript disabled', () => {
+        const originalAddEventListener = button.addEventListener;
+        button.addEventListener = () => {}; // Disable event listener
+        button.click();
+        expect(document.body.classList.contains('blue-theme')).toBe(false);
+        button.addEventListener = originalAddEventListener; // Restore event listener
+    });
 });
