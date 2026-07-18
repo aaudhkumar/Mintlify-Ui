@@ -376,10 +376,18 @@
 
     <script>
         const toggleButton = document.getElementById('blue-theme-toggle');
-        let isBlueTheme = false;
+        let isBlueTheme = localStorage.getItem('blueTheme') === 'true';
+
+        // Apply the theme on page load
+        document.body.classList.toggle('blue-theme', isBlueTheme);
+        document.querySelector('header').classList.toggle('blue-theme', isBlueTheme);
+        document.querySelector('.hero').classList.toggle('blue-theme', isBlueTheme);
+        document.querySelector('.footer-top').classList.toggle('blue-theme', isBlueTheme);
+        document.querySelector('.footer-bottom').classList.toggle('blue-theme', isBlueTheme);
 
         toggleButton.addEventListener('click', () => {
             isBlueTheme = !isBlueTheme;
+            localStorage.setItem('blueTheme', isBlueTheme);
             document.body.classList.toggle('blue-theme', isBlueTheme);
             document.querySelector('header').classList.toggle('blue-theme', isBlueTheme);
             document.querySelector('.hero').classList.toggle('blue-theme', isBlueTheme);
