@@ -373,5 +373,28 @@
         </div>
     </footer>
 
+    <button id="blue-button" aria-label="Toggle blue theme">Blue Theme</button>
+    <button id="toggle-button" aria-label="Toggle default theme">Toggle Theme</button>
+
+    <script>
+        const blueButton = document.getElementById('blue-button');
+        const toggleButton = document.getElementById('toggle-button');
+        let isBlueTheme = false;
+
+        blueButton.addEventListener('click', () => {
+            document.body.style.backgroundColor = isBlueTheme ? '' : 'blue';
+            document.body.style.color = isBlueTheme ? '' : 'white';
+            isBlueTheme = !isBlueTheme;
+        });
+
+        toggleButton.addEventListener('click', () => {
+            if (isBlueTheme) {
+                document.body.style.backgroundColor = '';
+                document.body.style.color = '';
+                isBlueTheme = false;
+            }
+        });
+    </script>
+
 </body>
 </html>
