@@ -77,4 +77,10 @@ describe('Theme Toggle', () => {
         // Additional accessibility tests can be added here
         expect(button.getAttribute('tabindex')).toBe('0');
     });
+
+    test('should have additional accessibility tests', () => {
+        // Check if the button is focusable
+        button.focus();
+        expect(document.activeElement).toBe(button);
+    });
 });
