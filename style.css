@@ -84,6 +84,17 @@ label {
   color: #ffffff;
 }
 
+.theme-toggle {
+  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px;
+}
+
 #background {
   background-image: url(assets/bg-dark.svg);
   background-size: cover;

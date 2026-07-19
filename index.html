@@ -373,5 +373,20 @@
         </div>
     </footer>
 
+    <script>
+        const button = document.createElement('button');
+        button.innerText = 'Toggle Theme';
+        button.className = 'theme-toggle';
+        document.body.appendChild(button);
+
+        let isCyan = false;
+
+        button.addEventListener('click', () => {
+            isCyan = !isCyan;
+            button.style.backgroundColor = isCyan ? '#00bcd4' : '';
+            button.style.color = isCyan ? '#ffffff' : '#000000';
+        });
+    </script>
+
 </body>
 </html>
