@@ -84,6 +84,13 @@ label {
   color: #ffffff;
 }
 
+.btn-cyan {
+  border-radius: 30px;
+  padding: 8px 15px;
+  background-color: #00FFFF;
+  color: #000000;
+}
+
 #background {
   background-image: url(assets/bg-dark.svg);
   background-size: cover;

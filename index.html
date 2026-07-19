@@ -6,6 +6,18 @@
     <title>Mintlify</title>
      <link rel="icon" type="image/x-icon" href="assets/mintlify-icon.svg">
      <link rel="stylesheet" href="style.css">
+     <script>
+        function toggleCyanTheme() {
+            const button = document.getElementById('toggle-theme-button');
+            if (button.classList.contains('btn-primary')) {
+                button.classList.remove('btn-primary');
+                button.classList.add('btn-cyan');
+            } else {
+                button.classList.remove('btn-cyan');
+                button.classList.add('btn-primary');
+            }
+        }
+    </script>
 </head>
 <body>
     
@@ -26,7 +38,7 @@
         </nav>
         <div class="cta">
             <a href="#" class="btn-secondary">Contact sales</a>
-            <a href="#" class="btn-primary">Start for free</a>
+            <a href="#" id="toggle-theme-button" class="btn-primary" onclick="toggleCyanTheme()">Start for free</a>
         </div>
     </header>
     
