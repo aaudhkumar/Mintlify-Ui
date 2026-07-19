@@ -293,6 +293,7 @@
                 </div>
             </div>
         </section>
+        <button id="toggle-theme" class="btn-primary">Toggle Theme</button>
     </main>
 
     <!-- ================= Footer Section  ================= -->
@@ -372,6 +373,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const toggleButton = document.getElementById('toggle-theme');
+        toggleButton.addEventListener('click', () => {
+            if (toggleButton.style.backgroundColor === 'cyan') {
+                toggleButton.style.backgroundColor = '';
+                toggleButton.style.color = '';
+            } else {
+                toggleButton.style.backgroundColor = 'cyan';
+                toggleButton.style.color = 'white';
+            }
+        });
+    </script>
 
 </body>
 </html>
