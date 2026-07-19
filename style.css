@@ -467,3 +467,9 @@ footer {
   align-items: center;
   gap: 15px;
 }
+
+/* Blue Theme Styles */
+.blue-theme {
+  background-color: blue;
+  color: white;
+}
