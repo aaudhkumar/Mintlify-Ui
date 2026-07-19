@@ -373,5 +373,23 @@
         </div>
     </footer>
 
+    <script>
+        let button = document.createElement('button');
+        button.innerText = 'Toggle Blue Theme';
+        button.style.padding = '10px 20px';
+        button.style.borderRadius = '5px';
+        button.style.cursor = 'pointer';
+        button.style.backgroundColor = '#0f1829a4';
+        button.style.color = '#ffffff';
+        button.onclick = function() {
+            if (button.style.backgroundColor === 'cyan') {
+                button.style.backgroundColor = '#0f1829a4';
+            } else {
+                button.style.backgroundColor = 'cyan';
+            }
+        };
+        document.body.appendChild(button);
+    </script>
+
 </body>
 </html>
