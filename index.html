@@ -293,6 +293,7 @@
                 </div>
             </div>
         </section>
+        <button id="blue-button" class="btn-primary">Toggle Blue Theme</button>
     </main>
 
     <!-- ================= Footer Section  ================= -->
@@ -372,6 +373,13 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const button = document.getElementById('blue-button');
+        button.addEventListener('click', () => {
+            button.style.backgroundColor = button.style.backgroundColor === 'cyan' ? '' : 'cyan';
+        });
+    </script>
 
 </body>
 </html>
