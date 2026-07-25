@@ -352,7 +352,7 @@
                     <li><a href="#">Responsible Disclosure</a></li>
                     <li><a href="#">Terms Of Service</a></li>
                     <li><a href="#">Security</a></li>
-                    <li><a href="#">DSR/DSAR</a></li>
+                    <li><a href="#">DSR/DSAR</a>
                 </ul>
             </nav>
         </div>
@@ -372,6 +372,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const blueButton = document.createElement('button');
+            blueButton.innerText = 'Tap me!';
+            blueButton.style.padding = '10px 20px';
+            blueButton.style.borderRadius = '5px';
+            blueButton.style.backgroundColor = '#ffffff';
+            blueButton.style.color = '#000000';
+            blueButton.style.border = 'none';
+            blueButton.style.cursor = 'pointer';
+            blueButton.addEventListener('click', function() {
+                blueButton.style.backgroundColor = 'blue';
+            });
+            document.body.appendChild(blueButton);
+        });
+    </script>
 
 </body>
 </html>
