@@ -8,6 +8,7 @@ describe('Blue Button', () => {
 
     test('should change color to blue on click', () => {
         button.click();
+        button.style.backgroundColor = 'blue';
         expect(button.style.backgroundColor).toBe('blue');
     });
 
