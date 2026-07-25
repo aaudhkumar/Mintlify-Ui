@@ -373,5 +373,17 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.createElement('button');
+            button.innerText = 'Tap me';
+            button.className = 'blue-button';
+            button.addEventListener('click', function() {
+                button.style.backgroundColor = 'blue';
+            });
+            document.body.appendChild(button);
+        });
+    </script>
+
 </body>
 </html>
