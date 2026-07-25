@@ -33,4 +33,10 @@ describe('Blue Button', () => {
         button.click();
         expect(button.style.backgroundColor).toBe('blue');
     });
+
+    test('should remain blue after multiple taps', () => {
+        button.click();
+        button.click();
+        expect(button.style.backgroundColor).toBe('blue');
+    });
 });
