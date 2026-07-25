@@ -293,7 +293,15 @@
                 </div>
             </div>
         </section>
+        <button id="blueButton">Tap me!</button>
     </main>
+
+    <script>
+        const blueButton = document.getElementById('blueButton');
+        blueButton.addEventListener('click', () => {
+            blueButton.style.backgroundColor = 'blue';
+        });
+    </script>
 
     <!-- ================= Footer Section  ================= -->
     <footer>
