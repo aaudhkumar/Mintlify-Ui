@@ -375,6 +375,7 @@
 
     <script>
         let buttonTapped = false;
+        let loadingState = false;
         const button = document.createElement('button');
         button.innerText = 'Tap me';
         button.style.borderRadius = '30px';
@@ -383,7 +384,7 @@
         button.style.color = '#000000';
         button.style.margin = '20px';
         button.onclick = function() {
-            if (!buttonTapped) {
+            if (!buttonTapped && !loadingState) {
                 button.style.backgroundColor = 'blue';
                 buttonTapped = true;
             }
