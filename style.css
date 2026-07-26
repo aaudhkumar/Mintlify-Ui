@@ -467,3 +467,14 @@ footer {
   align-items: center;
   gap: 15px;
 }
+
+.corsair-icon {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.corsair-icon img {
+  max-width: 100px;
+  height: auto;
+}
